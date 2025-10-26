@@ -20,8 +20,15 @@ const cube = new THREE.Mesh(boxGeometry, basicMaterial);
 scene.add(cube);
 cube.rotation.set(0.4, 0.2, 0);
 
+const dodecahedronGeometry = new THREE.DodecahedronGeometry(7);
+const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0xeaeff2 });
+const dodecahedron = new THREE.Mesh(dodecahedronGeometry, lambertMaterial);
+dodecahedron.position.x = 25;
+scene.add(dodecahedron);
+
 function render() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
 }
 render();
+
